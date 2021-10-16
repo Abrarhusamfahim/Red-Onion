@@ -56,11 +56,11 @@ const Main = () => {
 
     const getFoodById = id => {
         const data = (
-            Object.keys(restaurentData)
-                .map(key => restaurentData[key])
-                .map(foodType => foodType
-                    .find(food => food.id === id))
-                .filter(res => res !== undefined)[0]);
+            Object.keys(restaurentData)                 // Getting all keys (returns all the keys in an array)
+                .map(key => restaurentData[key])        // Geting all objects by key and putting in an array to be mapped (returns all the values with key in an array)
+                .map(foodType => foodType               // Mpping through the food types objects (breakfast, lunch , dinner),
+                    .find(food => food.id === id))      // Getting the food by id from food types (returns the food with id if found or undefied if not found and add to an array)
+                .filter(res => res !== undefined)[0]);  // Filterring undefined results and getting food object of index 0
 
         setFilteredFood(data);
         hideAll();
