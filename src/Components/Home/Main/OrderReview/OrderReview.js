@@ -6,7 +6,6 @@ import { Context } from '../../../../Context/ContextProvider';
 import './OrderReview.scss';
 
 const OrderReview = ({ goBack, hideAll, setShowPlaceOrder, deliveryData, setDeliveryData }) => {
-    const [placeOrderActive, setPlaceOrderActive] = useState(false);
 
     const { register, watch, handleSubmit, formState: { errors } } = useForm();
 
@@ -47,7 +46,6 @@ const OrderReview = ({ goBack, hideAll, setShowPlaceOrder, deliveryData, setDeli
 
 
     const onSubmit = data => {
-        setPlaceOrderActive(true);
         setDeliveryData(data);
     }
 
